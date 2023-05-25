@@ -46,11 +46,13 @@ public class ElasticSearchController {
 
     @GetMapping("/getByTitle")
     public ResponseEntity<Object> getByTitle(@RequestBody String title) {
+        System.out.println("title = " + title);
         return new ResponseEntity<>(bookService.findByTitle(title), HttpStatus.OK);
     }
 
     @PostMapping("/saveProduct")
     public ResponseEntity<?> saveProduct(@RequestBody Product product) throws IOException {
+        System.out.println("product = " + product);
         elasticSearchQuery.createProduct(product);
         return new ResponseEntity<>(HttpStatus.OK);
     }
