@@ -1,4 +1,5 @@
 package com.example.hotelservice.controller;
+
 import com.example.hotelservice.entity.Hotel;
 import com.example.hotelservice.service.HotelService;
 import lombok.RequiredArgsConstructor;
@@ -22,14 +23,12 @@ public class HotelController {
     }
 
     @GetMapping("/{hotelId}")
-    public  ResponseEntity<Hotel> findById(@PathVariable Long hotelId)
-    {
+    public ResponseEntity<Hotel> findById(@PathVariable Long hotelId) {
         return ResponseEntity.ok(hotelService.getHotel(hotelId));
     }
 
     @GetMapping
-    public ResponseEntity<List<Hotel>> getAllHotel()
-    {
+    public ResponseEntity<List<Hotel>> getAllHotel() {
         return ResponseEntity.ok(hotelService.getAllHotel());
     }
 
