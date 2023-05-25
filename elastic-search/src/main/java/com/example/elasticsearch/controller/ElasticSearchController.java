@@ -30,6 +30,7 @@ public class ElasticSearchController {
     @PostMapping("/createOrUpdateDocument")
     public ResponseEntity<Object> createOrUpdateDocument(@RequestBody String book) throws IOException {
         SearchResponse response = elasticSearchQuery.searchBook(book);
+        System.out.println("\"create product\" = " + "create product");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
