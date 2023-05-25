@@ -1,0 +1,27 @@
+
+spring:
+  application:
+    name: HOTEL-SERVICE
+  datasource:
+    url: jdbc:mysql://192.168.11.102:3307/ss
+    username: root
+    password: rootPassword
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone:  http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+server:
+  port: 8081
+
+
+
